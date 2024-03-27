@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import abhishektestnet.seleniumFrameworkDesign.baseTests.Utility;
+import abhishektestnet.seleniumFrameworkDesign.Utils.Utility;
 
 public class CartPage extends Utility{
 

@@ -17,8 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import abhishektestnet.seleniumFrameworkDesign.Utils.FileReader;
 import abhishektestnet.seleniumFrameworkDesign.baseTests.BaseTest;
-import abhishektestnet.seleniumFrameworkDesign.baseTests.FileReader;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.CartPage;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.CheckoutPage;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.ConfirmationPage;
@@ -35,7 +35,7 @@ public class SubmitOrderTest extends BaseTest{
 	
 	
 	@Test(enabled = true, dataProvider = "getDataForSubmitOrderTest",groups="Regression", testName = "SubmitOrderTest")
-	public void SubmitOrderTest(HashMap<String,String> input) throws IOException, InterruptedException {
+	public void submitOrderTest(HashMap<String,String> input) throws IOException, InterruptedException {
 		ProductCataloguePage productCateloguePage = landingPage.login(input.get("username"), input.get("password"));
 		CartPage cartPage = productCateloguePage.addProductToCart(input.get("product"));
 		cartPage.goToCart();

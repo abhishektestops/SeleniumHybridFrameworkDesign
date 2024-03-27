@@ -1,4 +1,4 @@
-package abhishektestnet.seleniumFrameworkDesign.baseTests;
+package abhishektestnet.seleniumFrameworkDesign.Utils;
 
 import java.time.Duration;
 

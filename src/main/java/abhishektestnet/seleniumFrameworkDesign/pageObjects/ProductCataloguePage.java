@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import abhishektestnet.seleniumFrameworkDesign.baseTests.Utility;
+import abhishektestnet.seleniumFrameworkDesign.Utils.Utility;
 
 public class ProductCataloguePage extends Utility{
 	WebDriver driver;
@@ -21,7 +21,7 @@ public class ProductCataloguePage extends Utility{
 	@FindBy(css = ".mb-3")
 	List<WebElement> productsList;
 	
-	@FindBy(css = "#toast-container")
+	@FindBy(css = ".toast-message")
 	WebElement errorMessage;
 	
 	By addToCart = By.cssSelector(".card-body button:last-of-type");
@@ -42,7 +42,6 @@ public class ProductCataloguePage extends Utility{
 	}
 	
 	public boolean verifyErrorMessage(String errorMsg) {
-		System.out.println("ErrorMSG: "+errorMessage.getText());
 		boolean error = errorMessage.getText().equals(errorMsg);
 		return error;
 	}
