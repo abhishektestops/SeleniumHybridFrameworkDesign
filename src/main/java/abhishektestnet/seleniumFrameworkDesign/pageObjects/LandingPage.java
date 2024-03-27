@@ -32,7 +32,6 @@ public class LandingPage extends Utility{
 		driver.get(FileReader.readPropertyFile("url"));
 		userName.sendKeys(username);
 		userPassword.sendKeys(password);
-		threadSleep(1000);
 		loginButton.click();
 		ProductCataloguePage productCateloguePage = new ProductCataloguePage(driver);
 		return productCateloguePage;

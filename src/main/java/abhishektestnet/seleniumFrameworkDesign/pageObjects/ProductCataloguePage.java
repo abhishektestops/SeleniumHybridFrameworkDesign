@@ -42,7 +42,6 @@ public class ProductCataloguePage extends Utility{
 	}
 	
 	public boolean verifyErrorMessage(String errorMsg) {
-		System.out.println(errorMessage.getText());
 		boolean error = errorMessage.getText().equals(errorMsg);
 		return error;
 	}
