@@ -5,13 +5,16 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest{
 	
-	WebDriver driver;
+	public WebDriver driver;
+	public LandingPage landingPage;
 
 	public WebDriver initializeDriver() throws IOException {
 		String browser = FileReader.readPropertyFile("browser");
@@ -27,13 +30,18 @@ public class BaseTest{
 		return driver;
 	}
 	
+	@BeforeMethod(alwaysRun = true)
 	public LandingPage launchApplication() throws IOException {
 		driver = initializeDriver();
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 		return landingPage;
 		
 	}
 	
-	
+
+	@AfterMethod(alwaysRun = true)
+	public void tearDown() {
+		driver.close();
+	}
 	
 }

@@ -34,7 +34,7 @@ public class LandingPage extends Utility{
 		userPassword.sendKeys(password);
 		loginButton.click();
 		ProductCataloguePage productCateloguePage = new ProductCataloguePage(driver);
-		threadSleep();
+		threadSleep(3000);
 		return productCateloguePage;
 	}
 }

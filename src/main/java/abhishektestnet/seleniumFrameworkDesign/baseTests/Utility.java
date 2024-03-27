@@ -25,8 +25,8 @@ public class Utility {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 	
-	public void threadSleep() throws InterruptedException {
-		Thread.sleep(2000);
+	public void threadSleep(long time) throws InterruptedException {
+		Thread.sleep(time);
 	}
 	
 }

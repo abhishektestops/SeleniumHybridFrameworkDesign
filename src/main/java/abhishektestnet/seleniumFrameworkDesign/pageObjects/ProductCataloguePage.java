@@ -18,26 +18,24 @@ public class ProductCataloguePage extends Utility{
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(css = ".mb-3 b")
+	@FindBy(css = ".mb-3")
 	List<WebElement> productsList;
 	
 	By addToCart = By.cssSelector(".card-body button:last-of-type");
 	
 	public WebElement getProductByName(String name) {
-		WebElement prod = null;
-		for(int i=0; i<productsList.size(); i++) {
-			if(productsList.get(i).getText().equals(name)) {
-				prod =  productsList.get(i);
-			}else {
-				continue;
-			}
-		}
-		return prod;
+		WebElement prodct = productsList.stream()
+				.filter(product -> product.findElement(By.cssSelector("b")).getText().equalsIgnoreCase(name)).findFirst().orElse(null);
+		
+		return prodct;
 	}
 	
-	public void addProductToCart(String productName) {
+	public CartPage addProductToCart(String productName) throws InterruptedException {
 		WebElement prod = getProductByName(productName);
 		prod.findElement(addToCart).click();
+		threadSleep(3000);
+		CartPage cartPage = new CartPage(driver);
+		return cartPage;
 	}
 	
 }
