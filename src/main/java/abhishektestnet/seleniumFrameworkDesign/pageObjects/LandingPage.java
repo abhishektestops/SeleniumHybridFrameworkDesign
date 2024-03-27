@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import abhishektestnet.seleniumFrameworkDesign.baseTests.FileReader;
-import abhishektestnet.seleniumFrameworkDesign.baseTests.Utility;
+import abhishektestnet.seleniumFrameworkDesign.Utils.FileReader;
+import abhishektestnet.seleniumFrameworkDesign.Utils.Utility;
 
 public class LandingPage extends Utility{
 	
@@ -32,9 +32,9 @@ public class LandingPage extends Utility{
 		driver.get(FileReader.readPropertyFile("url"));
 		userName.sendKeys(username);
 		userPassword.sendKeys(password);
+		threadSleep(1000);
 		loginButton.click();
 		ProductCataloguePage productCateloguePage = new ProductCataloguePage(driver);
-		threadSleep(3000);
 		return productCateloguePage;
 	}
 }

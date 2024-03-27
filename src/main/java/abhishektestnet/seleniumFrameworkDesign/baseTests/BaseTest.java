@@ -8,6 +8,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import abhishektestnet.seleniumFrameworkDesign.Utils.FileReader;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 

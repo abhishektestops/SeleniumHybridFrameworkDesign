@@ -16,7 +16,7 @@ public class LoginErrorValidationTest extends BaseTest{
 	 * @Author: Abhishek Chaturvedi
 	 * */
 	
-	@Test
+	@Test(groups = "ErrorValidations")
 	public void loginErrorValidation() throws IOException, InterruptedException {
 		ProductCataloguePage productCateloguePage = landingPage.login("abhishek@email.com", "Strong@0");
 		Assert.assertTrue(productCateloguePage.verifyErrorMessage("Incorrect email or password."));

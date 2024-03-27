@@ -17,8 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import abhishektestnet.seleniumFrameworkDesign.Utils.FileReader;
 import abhishektestnet.seleniumFrameworkDesign.baseTests.BaseTest;
-import abhishektestnet.seleniumFrameworkDesign.baseTests.FileReader;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.CartPage;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.CheckoutPage;
 import abhishektestnet.seleniumFrameworkDesign.pageObjects.ConfirmationPage;
