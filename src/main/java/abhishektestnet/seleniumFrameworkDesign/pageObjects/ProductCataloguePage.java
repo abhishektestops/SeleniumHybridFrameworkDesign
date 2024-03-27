@@ -21,6 +21,9 @@ public class ProductCataloguePage extends Utility{
 	@FindBy(css = ".mb-3")
 	List<WebElement> productsList;
 	
+	@FindBy(css = "#toast-container")
+	WebElement errorMessage;
+	
 	By addToCart = By.cssSelector(".card-body button:last-of-type");
 	
 	public WebElement getProductByName(String name) {
@@ -36,6 +39,12 @@ public class ProductCataloguePage extends Utility{
 		threadSleep(3000);
 		CartPage cartPage = new CartPage(driver);
 		return cartPage;
+	}
+	
+	public boolean verifyErrorMessage(String errorMsg) {
+		System.out.println("ErrorMSG: "+errorMessage.getText());
+		boolean error = errorMessage.getText().equals(errorMsg);
+		return error;
 	}
 	
 }
