@@ -35,7 +35,7 @@ public class SubmitOrderTest extends BaseTest{
 	
 	
 	@Test(enabled = true, dataProvider = "getDataForSubmitOrderTest",groups="Regression", testName = "SubmitOrderTest")
-	public void SubmitOrderTest(HashMap<String,String> input) throws IOException, InterruptedException {
+	public void submitOrderTest(HashMap<String,String> input) throws IOException, InterruptedException {
 		ProductCataloguePage productCateloguePage = landingPage.login(input.get("username"), input.get("password"));
 		CartPage cartPage = productCateloguePage.addProductToCart(input.get("product"));
 		cartPage.goToCart();
